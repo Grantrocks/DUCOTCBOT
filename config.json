@@ -1,0 +1,33 @@
+{"commands":
+  {
+    "Help":""
+  },
+  "game_configs":{
+    "headstails":{
+      "win_multi":1.5
+    }
+  },
+  "templates":{
+    "new_user":{
+      "balance":0,
+      "deposited":0,
+      "withdrawn":0,
+      "transaction_history":[],
+      "game_history":[],
+      "banned":false,
+      "id":"",
+      "deposit_code":"",
+      "duco_account":"",
+      "joined":"date",
+      "last_active":"date",
+      "games_played":0,
+      "games_won":0,
+      "total_wager":0,
+      "total_loss":0,
+      "total_gain":0,
+      "xp":0,
+      "level":0,
+      "items":[]
+    }
+  }
+}
