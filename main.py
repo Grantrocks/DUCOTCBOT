@@ -126,7 +126,7 @@ async def _withdraw(ctx,amount: discord.commands.Option(int,"Amount of ᕲ to wi
           if user['duco_account']!="":
             res=requests.get("http://51.15.127.80/transaction?username=DucoTruccoServices&password="+os.environ['casino_acc_pw']+"&recipient="+user['duco_account']+"&amount="+str(amount)+"&memo=Heres your payment from the Duco Truco Casino.")
             response=res.json()
-            
+            # not working right
             if response['success']:
               with open(f"database/users/{str(user['id'])}.json","w") as f:
                 user['balance']-=amount
