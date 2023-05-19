@@ -1,5 +1,6 @@
 import discord
 import os # default module
+
 import time
 import json
 import uuid
@@ -124,7 +125,9 @@ async def _withdraw(ctx,amount: discord.commands.Option(int,"Amount of ᕲ to wi
       if user['deposited']>=10:
         if user['total_wager']>=10:
           if user['duco_account']!="":
-            res=requests.get("http://51.15.127.80/transaction?username=DucoTruccoServices&password="+os.environ['casino_acc_pw']+"&recipient="+user['duco_account']+"&amount="+str(amount)+"&memo=Heres your payment from the Duco Truco Casino.")
+            print(requests.get("https://server.duinocoin.com/transactions").text)
+            res=requests.get("https://server.duinocoin.com/transaction?username=DucoTruccoServices&password="+"I34x4oh17ctGSQGh3bgw"+"&recipient="+user['duco_account']+"&amount="+str(amount)+"&memo=Heres your payment from the Duco Truco Casino.")
+            print(res.status_code)
             response=res.json()
             # not working right
             if response['success']:
@@ -211,4 +214,4 @@ async def _dice(ctx,wager:discord.commands.Option(int,"Amount of ᕲ to wager",r
 @bot.slash_command(name="help",description="Need some help?")
 async def _help(ctx):
   ctx.respond("Hello there!")
-bot.run(os.environ['ds_token']) # run the bot with the token
+bot.run("MTAzNDU5NjgzMzgwNjI1ODI5Nw.GEGMQu.SHahk3IAKfc0X8x8ReJmTrXxD0kfJD9D7I02R4") # run the bot with the token
